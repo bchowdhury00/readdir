@@ -67,12 +67,12 @@ int main(int argc, char *argv[]){
     unit = "MB";
   if (counter ==3)
     unit = "GB";
-  printf("The size of the files in this directory is and its subdirectories is : %lld %s\n\n",size,unit);
+  printf("The size of the files in this directory is and its subdirectories is : %ld %s\n\n",size,unit);
   if (argc > 2)
     printf("Too many directories entered");
-  char buffer[500];
-  printf("enter the directory you wish to read: \n");
-  fgets(&buffer,500,stdin);
+  char * buffer;
+  printf("The directory you wish to read: \n");
+  buffer = *(argv+1);
   if (readDir(buffer) == 0)
     return 0;
   size = dirSize(buffer);
@@ -88,7 +88,7 @@ int main(int argc, char *argv[]){
     unit = "MB";
   if (counter ==3)
     unit = "GB";
-  printf("The size of the files in this directory is and its subdirectories is : %lld %s\n",size,unit);
+  printf("The size of the files in this directory is and its subdirectories is : %ld %s\n",size,unit);
   return 0;
 }
   
